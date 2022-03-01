@@ -37,7 +37,7 @@ if you re using npm add the following
 ```yaml
 - uses: actions/setup-node@v1
   with:
-    node-version: 12
+    node-version: 16
 - run: npm ci
 - run: npm run build
 ```
