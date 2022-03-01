@@ -26,7 +26,7 @@ Add the following under the steps definition if you are using yarn
 ```yaml
 - uses: actions/setup-node@v1
   with:
-    node-version: 12
+    node-version: 16
 - run: npm install -g yarn
 - run: yarn install --frozen-lockfile
 - run: yarn build
