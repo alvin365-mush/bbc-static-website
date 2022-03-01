@@ -4,8 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-pattern":
-          "url('https://news.files.bbci.co.uk/vj/live/idt-images/image-slider-hello/SMOG_vdyw4.jpg')",
+        "hero-pattern": "url('/images/SMOG_vdyw4.jpg')",
       },
     },
   },
