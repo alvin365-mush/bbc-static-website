@@ -1,7 +1,6 @@
 import React from "react";
 import { CameraIcon, LinkIcon } from "@heroicons/react/outline";
 
-import Image from "next/image";
 function Hero({ data }) {
   return (
     <div className="relative mx-auto  bg-cover  z-10  h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] bg-gradient-to-t from-black">

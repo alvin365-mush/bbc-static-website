@@ -1,3 +1,5 @@
+const optimizedImages = require("next-optimized-images");
+module.exports = optimizedImages();
 module.exports = {
   /*reactStrictMode: true,*/
   eslint: {
@@ -6,5 +8,3 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
 };
-const optimizedImages = require("next-optimized-images");
-module.exports = optimizedImages();
