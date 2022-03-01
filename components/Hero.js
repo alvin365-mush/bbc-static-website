@@ -39,4 +39,3 @@ function Hero({ data }) {
 }
 
 export default Hero;
-//bg-[url('https://news.files.bbci.co.uk/vj/live/idt-images/image-slider-hello/SMOG_vdyw4.jpg')]

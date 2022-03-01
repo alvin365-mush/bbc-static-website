@@ -7,12 +7,12 @@ function MainContent({ data }) {
   const range = (min, max) =>
     Array.from({ length: max - min + 1 }, (_, i) => min + i);
   const myrange = range(1, 30);
-  const suff = myrange.map(
+  const oneCity = myrange.map(
     (number) => data[`compare-tabs_1_city_${number}_name`]
   );
   const [cityKey, setCityKey] = useState("");
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(suff[0]);
+  const [selected, setSelected] = useState(oneCity[0]);
   const [townNo, setTownNo] = useState();
 
   useEffect(() => {
@@ -40,8 +40,8 @@ function MainContent({ data }) {
 
   const filteredCities =
     query === ""
-      ? suff
-      : suff.filter((filterData) =>
+      ? oneCity
+      : oneCity.filter((filterData) =>
           filterData
             .toLowerCase()
             .replace(/\s+/g, "")
