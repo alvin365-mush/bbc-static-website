@@ -18,6 +18,41 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## To deploy to S3 using Github Actions
+Configure your S3 bucket using the [AWS Docnumentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
+Create a Github Actions Workflow and when editing deploy.yml, remove the `pull_request` definition in the on property and remove all steps except for `uses: actions/checkout@v2`
+Add the following under the steps definition if you are using yarn
+
+```yaml
+- uses: actions/setup-node@v1
+  with:
+    node-version: 12
+- run: npm install -g yarn
+- run: yarn install --frozen-lockfile
+- run: yarn build
+```
+
+if you re using npm add the following 
+
+```yaml
+- uses: actions/setup-node@v1
+  with:
+    node-version: 12
+- run: npm ci
+- run: npm run build
+```
+
+Next configure github Actions to deploy the static website to S3
+You can use the [Configure AWS credentials](https://github.com/aws-actions/configure-aws-credentials/blob/master/README.md) guide to configure your API keys (Remember DO NOT MAKE YOUR AWS API KEYS AND SECRETS PUBLIC)
+
+Then add the following step to your Github Actions and commit the changes.
+
+```yaml
+- run: aws s3 sync ./out s3://[bucket-name]
+```
+
+Wait for the build to finish and check your S3 Bucket website endpoint.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
