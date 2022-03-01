@@ -18,6 +18,17 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+Add the add `next export -o ./dist` to package.json as shown below to output to `dist` folder
+
+```yaml
+"scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o ./dist",
+    "start": "next start",
+    "lint": "next lint"
+  },
+```
+
 ## To deploy to S3 using Github Actions
 Configure your S3 bucket using the [AWS Docnumentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
 Create a Github Actions Workflow and when editing deploy.yml, remove the `pull_request` definition in the on property and remove all steps except for `uses: actions/checkout@v2`
