@@ -1,9 +1,14 @@
 import React from "react";
 import { CameraIcon, LinkIcon } from "@heroicons/react/outline";
 import image from "../public/images/SMOG_vdyw4.jpg";
+import Image from "next/image";
 function Hero({ data }) {
+  const image = (
+    <Image layout="fill" objectFit="cover" src={data.hero_1_image} />
+  );
   return (
-    <div className="relative mx-auto bg-[url('/images/SMOG_vdyw4.jpg')] bg-cover  z-10  h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] bg-gradient-to-t from-black">
+    <div className="relative mx-auto  bg-cover  z-10  h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] bg-gradient-to-t from-black">
+      {image}
       <div className="absolute sm:h-2/3 pb-2 bottom-0 lg:h-1/2 w-full text-left px-8 bg-gradient-to-t from-black">
         <div className="flex flex-row w-full space-x-2">
           <CameraIcon className=" text-white bg-[#00a5a5] h-10 p-2 sm:h-14 sm:p-3 rounded-sm" />
@@ -33,3 +38,4 @@ function Hero({ data }) {
 }
 
 export default Hero;
+//bg-[url('https://news.files.bbci.co.uk/vj/live/idt-images/image-slider-hello/SMOG_vdyw4.jpg')]
