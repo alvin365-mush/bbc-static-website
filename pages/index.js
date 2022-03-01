@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div>
       <Head key="ss">
-        <title key="jhgsgd">Create Next App</title>
+        <title key="jhgsgd">Air Quality in India</title>
         <meta
           key="jhsd"
           name="description"
